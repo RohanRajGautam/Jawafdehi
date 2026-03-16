@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { DocumentSourceCard } from "@/components/DocumentSourceCard";
+import { ResponsiveTable } from "@/components/ResponsiveTable";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -157,7 +158,7 @@ const CaseDetail = () => {
 
       <main className="flex-1 py-12">
         <div className="container mx-auto px-4 max-w-5xl">
-          <div className="flex justify-between mb-4">
+          <div className="flex flex-col sm:flex-row justify-between mb-4">
             <Button variant="outline" asChild className="mb-2">
               <Link to="/cases">
                 <ArrowLeft className="h-4 w-4" />
@@ -336,11 +337,8 @@ const CaseDetail = () => {
                 {t("caseDetail.overview")}
               </CardTitle>
             </CardHeader>
-            <CardContent>
-              <div
-                className="text-muted-foreground leading-relaxed prose prose-sm max-w-none [&_a]:underline [&_p]:mb-4 [&_p:last-child]:mb-0 [&_ul]:space-y-2 [&_ul]:my-4 [&_li]:ml-6 [&_li]:pl-2 [&_table]:w-full [&_table]:border-collapse [&_table]:my-4 [&_table]:border [&_table]:border-border [&_th]:border [&_th]:border-border [&_th]:px-3 [&_th]:py-2 [&_th]:text-left [&_th]:bg-muted [&_th]:font-semibold [&_td]:border [&_td]:border-border [&_td]:px-3 [&_td]:py-2 [&_tr:nth-child(even)]:bg-muted/50"
-                dangerouslySetInnerHTML={{ __html: caseData.description }}
-              />
+            <CardContent className="overflow-hidden">
+              <ResponsiveTable html={caseData.description} />
             </CardContent>
           </Card>
 
@@ -382,11 +380,8 @@ const CaseDetail = () => {
                   {t("caseDetail.notes")}
                 </CardTitle>
               </CardHeader>
-              <CardContent>
-                <div
-                  className="text-muted-foreground leading-relaxed prose prose-sm max-w-none [&_a]:underline [&_p]:mb-4 [&_p:last-child]:mb-0 [&_ul]:space-y-2 [&_ul]:my-4 [&_li]:ml-6 [&_li]:pl-2 [&_table]:w-full [&_table]:border-collapse [&_table]:my-4 [&_table]:border [&_table]:border-border [&_th]:border [&_th]:border-border [&_th]:px-3 [&_th]:py-2 [&_th]:text-left [&_th]:bg-muted [&_th]:font-semibold [&_td]:border [&_td]:border-border [&_td]:px-3 [&_td]:py-2 [&_tr:nth-child(even)]:bg-muted/50"
-                  dangerouslySetInnerHTML={{ __html: caseData.notes }}
-                />
+              <CardContent className="overflow-hidden">
+                <ResponsiveTable html={caseData.notes} />
               </CardContent>
             </Card>
           )}
