@@ -168,8 +168,20 @@ const Entities = () => {
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <Helmet>
-        <title>Entities | Jawafdehi</title>
-        <meta name="description" content={t("entities.hero.description")} />
+        <title>Public Entities | Jawafdehi Nepal</title>
+        <meta name="description" content="Explore profiles of Nepali public officials, politicians, and organizations tracked on Jawafdehi. View their associated corruption and misconduct cases." />
+        <link rel="canonical" href="https://jawafdehi.org/entities" />
+        <meta property="og:site_name" content="Jawafdehi Nepal" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://jawafdehi.org/entities" />
+        <meta property="og:title" content="Public Entities | Jawafdehi Nepal" />
+        <meta property="og:description" content="Explore profiles of Nepali public officials, politicians, and organizations tracked on Jawafdehi. View their associated corruption and misconduct cases." />
+        <meta property="og:image" content="https://jawafdehi.org/og-favicon.png" />
+        <meta property="og:locale" content="en_US" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Public Entities | Jawafdehi Nepal" />
+        <meta name="twitter:description" content="Explore profiles of Nepali public officials, politicians, and organizations tracked on Jawafdehi. View their associated corruption and misconduct cases." />
+        <meta name="twitter:image" content="https://jawafdehi.org/og-favicon.png" />
       </Helmet>
       <Header />
 

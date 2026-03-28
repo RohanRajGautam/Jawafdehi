@@ -70,8 +70,20 @@ const Index = () => {
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <Helmet>
-        <title>Jawafdehi Nepal | Transparency & Anti-Corruption</title>
+        <title>Jawafdehi Nepal | Transparency &amp; Anti-Corruption</title>
         <meta name="description" content="Jawafdehi documents corruption cases in Nepal. Browse verified cases, track accountability, and promote transparency." />
+        <link rel="canonical" href="https://jawafdehi.org/" />
+        <meta property="og:site_name" content="Jawafdehi Nepal" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://jawafdehi.org/" />
+        <meta property="og:title" content="Jawafdehi Nepal | Transparency &amp; Anti-Corruption" />
+        <meta property="og:description" content="Jawafdehi documents corruption cases in Nepal. Browse verified cases, track accountability, and promote transparency." />
+        <meta property="og:image" content="https://jawafdehi.org/og-favicon.png" />
+        <meta property="og:locale" content="en_US" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Jawafdehi Nepal | Transparency &amp; Anti-Corruption" />
+        <meta name="twitter:description" content="Jawafdehi documents corruption cases in Nepal. Browse verified cases, track accountability, and promote transparency." />
+        <meta name="twitter:image" content="https://jawafdehi.org/og-favicon.png" />
       </Helmet>
       <Header />
 

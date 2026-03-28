@@ -146,9 +146,19 @@ const CaseDetail = () => {
   }
 
   const canonicalUrl = `https://jawafdehi.org/case/${id}`;
-  // Strip HTML tags and normalize whitespace for meta description (always English from API)
+  // Strip HTML tags, decode HTML entities, and normalize whitespace for meta description
   const plainDescription = caseData.description
-    .replace(/<[^>]*>/g, ' ')
+    .replace(/<[^>]*>/g, ' ')         
+    .replace(/&nbsp;/g, ' ')
+    .replace(/&ndash;/g, '–')
+    .replace(/&mdash;/g, '—')
+    .replace(/&amp;/g, '&')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&[a-z]+;/gi, ' ')
+    .replace(/&#\d+;/g, ' ')
     .replace(/\s+/g, ' ')
     .trim()
     .substring(0, 160);
@@ -168,7 +178,7 @@ const CaseDetail = () => {
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:title" content={`${caseData.title} | Jawafdehi`} />
         <meta property="og:description" content={metaDescription} />
-        <meta property="og:image" content="https://jawafdehi.org/favicon.png" />
+        <meta property="og:image" content="https://jawafdehi.org/og-favicon.png" />
         <meta property="og:locale" content="en_US" />
         <meta property="article:published_time" content={caseData.created_at} />
         <meta property="article:modified_time" content={caseData.updated_at} />
@@ -180,7 +190,7 @@ const CaseDetail = () => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={`${caseData.title} | Jawafdehi`} />
         <meta name="twitter:description" content={metaDescription} />
-        <meta name="twitter:image" content="https://jawafdehi.org/favicon.png" />
+        <meta name="twitter:image" content="https://jawafdehi.org/og-favicon.png" />
       </Helmet>
       <Header />
 
